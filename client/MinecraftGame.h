@@ -4,6 +4,10 @@
 
 class GuiData;
 class MinecraftEventing;
+class Options;
+class Realms;
+class ClientInstance;
+class Player;
 
 class MinecraftGame
 {
@@ -21,10 +25,13 @@ public:
     void onTick();
     void onDimensionChanged();
     void onOptionsLoadBegin();
+    void onPlayerLoaded(ClientInstance&, Player&);
     void onUserSignin();
     void handleBack(bool);
     
     GuiData* getPrimaryGuiData();
+    Options* getPrimaryUserOptions();
+    Realms* getRealms();
     bool isInGame();
     bool isInRealm();
     bool isEduMode() const;
